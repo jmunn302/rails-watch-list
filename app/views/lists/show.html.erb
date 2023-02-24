@@ -1,0 +1,19 @@
+<div id="container">
+<h2><%= @list.name %></h2>
+<div class="card">
+<% @bookmarks.each do |bookmark| %>
+  <p><strong>Movie title:</strong> <%= bookmark.movie.title %> </p>
+  <p><strong>Comment: </strong><%= bookmark.comment %></p>
+  <p class = "btn btn-dark">
+  <%= link_to "Delete this Bookmark",  bookmark_path %>
+<% end %>
+</div>
+
+  </br>
+  <p class = "btn btn-info">
+  <%= link_to "Add a Bookmark",  new_list_bookmark_path(@list) %>
+</p>
+  <p class = "btn btn-info">
+  <%= link_to "Back to Lists", lists_path %>
+</p>
+</div>
